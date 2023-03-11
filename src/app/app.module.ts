@@ -19,12 +19,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductHeaderComponent } from './pages/home/components/product-header/product-header.component';
+import { FilterComponent } from './pages/home/components/filter/filter.component';
+import { ProductBoxComponent } from './pages/home/components/product-box/product-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ProductHeaderComponent,
+    FilterComponent,
+    ProductBoxComponent
   ],
   imports: [
     BrowserModule,
