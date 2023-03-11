@@ -4,10 +4,10 @@
             <filter (showCategory)="onShowCategory($event)"></filter>
       </mat-drawer>
       <mat-drawer-content class="p-6">
-            <product-header (columnsCountChange)="onColumnsCountChange($event)"></product-header>
+            <product-header (columnsCountChange)="onColumnsCountChange($event)" (sortChange)="onSortChange($event)" (itemsCountChange)="onItemsCountChange($event)"></product-header>
             <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
-                  <mat-grid-tile>
-                        <product-box (addToCart)="onAddToCart($event)" class="w-full" [fullWidthMode]="cols === 1"></product-box>
+                  <mat-grid-tile *ngFor="let product of products">
+                        <product-box [product]="product" (addToCart)="onAddToCart($event)" class="w-full" [fullWidthMode]="cols === 1"></product-box>
                   </mat-grid-tile>
             </mat-grid-list>
       </mat-drawer-content>

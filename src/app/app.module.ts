@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CartService } from './services/cart.service';
+import { ProductService } from './services/product.service';
 
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatGridListModule } from '@angular/material/grid-list'
@@ -23,7 +25,7 @@ import { ProductHeaderComponent } from './pages/home/components/product-header/p
 import { FilterComponent } from './pages/home/components/filter/filter.component';
 import { ProductBoxComponent } from './pages/home/components/product-box/product-box.component';
 import { CartComponent } from './pages/cart/cart.component';
-import { CartService } from './services/cart.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,8 +53,9 @@ import { CartService } from './services/cart.service';
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
+    HttpClientModule
   ],
-  providers: [CartService],
+  providers: [CartService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
