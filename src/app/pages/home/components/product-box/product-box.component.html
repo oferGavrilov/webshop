@@ -1,11 +1,11 @@
-<mat-card class="text-center">
-      <div>
-            <img class="mb-1 mx-auto h-[200px]" src="https://via.placeholder.com/150" alt="" />
-            <div class="w-full">
+<mat-card [ngClass]="{'text-center': !fullWidthMode}">
+      <div [ngClass]="{flex: fullWidthMode}" class="p-4">
+            <img class="mb-1 mx-auto h-[200px]" src="https://via.placeholder.com/150" alt="" [ngClass]="{'h-200px': !fullWidthMode , 'h-[360px]':  fullWidthMode}"/>
+            <div class="w-full" [ngClass]="{'px-8  flex flex-col justify-between' : fullWidthMode}">
                   <div>
                         <h5>Shoes</h5>
                         <p class="truncate hover:whitespace-normal">Snickers</p>
-                        <p>Description</p>
+                        <p *ngIf="fullWidthMode">Description</p>
                   </div>
                   <div class="flex justify-between">
                         <span class="text-red-400">{{'150' | currency}}</span>

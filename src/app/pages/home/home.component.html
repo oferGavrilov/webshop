@@ -7,7 +7,16 @@
             <product-header (columnsCountChange)="onColumnsCountChange($event)"></product-header>
             <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
                   <mat-grid-tile>
-                        <product-box></product-box>
+                        <product-box class="w-full" [fullWidthMode]="cols === 1"></product-box>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                        <product-box class="w-full" [fullWidthMode]="cols === 1"></product-box>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                        <product-box class="w-full" [fullWidthMode]="cols === 1"></product-box>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                        <product-box class="w-full" [fullWidthMode]="cols === 1"></product-box>
                   </mat-grid-tile>
             </mat-grid-list>
       </mat-drawer-content>
